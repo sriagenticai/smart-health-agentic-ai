@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "ingest_telemetry",
+    "type": "object",
+    "properties": {
+        "tool": { "const": "ingest_telemetry" },
+        "input": {
+                "type": "object",
+                "properties": {
+                    "source_timestamp": { "type": "string", 
+                                          "description": "Optional raw timestamp from device or user input"},
+                    "patient_id": { "type": "string", "description": "Unique patient identifier" },
+                    "source": { "type": "string", 
+                                "enum": ["wearable_device", "mobile_app_manual", "hospital_system"], 
+                                "description": "Source of the telemetry data" },
+                    "raw_payload": { "type": "string", 
+                                     "minLength": 1, 
+                                     "description": "Unstructured telemetry payload" }
+                },
+                "required": ["patient_id", "source", "raw_payload"],
+                "additionalProperties": false   
+            },
+        "output": {
+                "type": "object",
+                "properties": {
+                    "timestamp": { "type": "string", 
+                                    "description": "Normalized ISO-8601 measurement timestamp" },
+                    "heart_rate": { "type": "number", 
+                                    "description": "Extracted heart rate in beats per minute" },
+                    "spo2": { "type": "number", 
+                              "minimum": 0,
+                              "maximum": 100,
+                              "description": "Extracted blood oxygen saturation percentage" },
+                    "steps": { "type": "number", 
+                               "minimum": 0,
+                               "description": "Extracted step count" },
+                    "weight": { "type": "integer", 
+                                "description": "Body weight in kilograms" },
+                    "confidence": { "type": "number", 
+                                    "minimum": 0, 
+                                    "maximum": 1, 
+                                    "description": "Confidence score of the extraction (0 to 1)" },
+                    "ingest_notes": { "type": "array", 
+                                      "items": { "type": "string" }, 
+                                      "description": "Notes on parsing, assumptions and any issues encountered" }
+                },
+                "required": ["timestamp", "confidence", "ingest_notes"],
+                "additionalProperties": false
+        }
+    },
+    "required": ["tool", "input", "output"],
+    "additionalProperties": false
+}

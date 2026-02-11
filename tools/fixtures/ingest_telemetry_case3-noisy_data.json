@@ -1,0 +1,21 @@
+{
+    "tool": "ingest_telemetry",
+    "input": {
+        "source_timestamp": "2026-02-10T08:30",
+        "patient_id": "PAT-345",
+        "source": "wearable_device",
+        "raw_payload": "HR=??;SpO2=95-97;Steps=about 4000;"
+    },
+    "output": {
+        "timestamp": "2026-02-10T08:30:00+05:30",
+        "spo2": 96,
+        "steps": 4000,
+        "confidence": 0.45,
+        "ingest_notes": [
+            "Heart rate could not be reliably parsed.",
+            "SpO2 range averaged to a single value.",
+            "Steps approximated from ambiguous input.",            
+            "Source timestamp used as measurement timestamp."
+        ]
+    }
+}

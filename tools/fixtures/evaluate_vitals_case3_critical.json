@@ -1,0 +1,22 @@
+{
+  "tool": "evaluate_vitals",
+  "input": {
+    "patient_id": "PAT-505",
+    "timestamp": "2026-02-01T08:30:00+05:30",
+    "vitals": [
+      { "vital_name": "spo2", "value": 85, "unit": "%" }
+    ]
+  },
+  "output": {
+    "findings": [
+        {
+            "vital_name": "spo2",
+            "status": "critical",
+            "details": "Blood oxygen saturation below safe threshold.",
+            "severity": "high"
+        }
+    ],
+    "confidence": 0.9,
+    "evaluation_notes": ["SpO2 critically low. Clinical intervention needed immediately to address hypoxemia risk."]
+  }
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "evaluate_vitals",
+    "type": "object",
+    "properties": {
+        "tool": { "const": "evaluate_vitals" },
+        "input":{
+            "type": "object",
+            "properties":{
+                "patient_id": { "type": "string" },
+                "timestamp": { "type": "string" },
+                "vitals":{
+                    "type": "array",
+                    "items":{ "type": "object",
+                              "properties":{
+                                            "vital_name":{"type": "string", "enum": ["heart_rate", "spo2", "weight"]},
+                                            "value": { "type": "number" },
+                                            "unit": { "type": "string" }
+                                           },
+                               "required": ["vital_name", "value"],
+                               "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["patient_id", "timestamp", "vitals"],
+            "additionalProperties": false
+        },
+        "output":{
+            "type": "object",
+            "properties": {
+                "findings":{"type": "array",
+                            "items":{"type": "object", 
+                                     "properties":{ "vital_name":{"type":"string"}, 
+                                                    "status":{"type": "string", "enum": ["normal", "alert", "critical"]}, 
+                                                    "details":{"type": "string"}, 
+                                                    "severity":{"type": "string", "enum": ["low", "medium", "high"]}
+                                                  },
+                                     "description": "List of findings for each vital, including status and severity"
+                                    }
+                            },
+                "confidence":{"type": "number", "minimum": 0, "maximum": 1
+                             },
+                "evaluation_notes":{ "type": "array",
+                                     "items": { "type": "string" }
+                                    }
+            },
+            "required": ["findings", "confidence", "evaluation_notes"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["tool", "input", "output"],
+    "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "tool": "evaluate_vitals",
+  "input": {
+    "patient_id": "PAT-100",
+    "timestamp": "2026-02-01T08:30:00+05:30",
+    "vitals": [
+      { "vital_name": "heart_rate", "value": 108, "unit": "bpm" }
+    ]
+  },
+  "output": {
+    "findings": [
+        {
+            "vital_name": "heart_rate",
+            "status": "alert",
+            "details": "Heart rate is elevated above normal threshold.",
+            "severity": "medium"
+        }
+    ],
+    "confidence": 0.85,
+    "evaluation_notes": ["Heart rate above expected resting threshold."]
+  }
+}

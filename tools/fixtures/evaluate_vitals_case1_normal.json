@@ -1,0 +1,16 @@
+{
+  "tool": "evaluate_vitals",
+  "input": {
+    "patient_id": "PAT-2001",
+    "timestamp": "2026-02-01T08:30:00+05:30",
+    "vitals": [
+      { "vital_name": "heart_rate", "value": 72, "unit": "bpm" },
+      { "vital_name": "spo2", "value": 98, "unit": "%" }
+    ]
+  },
+  "output": {
+    "findings": [],
+    "confidence": 0.95,
+    "evaluation_notes": ["All vitals within normal thresholds."]
+  }
+}

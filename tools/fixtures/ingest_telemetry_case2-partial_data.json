@@ -1,0 +1,18 @@
+{
+    "tool": "ingest_telemetry",
+    "input": {
+        "source_timestamp": "2026-01-01T10:30",
+        "patient_id": "PAT-120",
+        "source": "mobile_app_manual",
+        "raw_payload": "HR:102bpm"
+    },
+    "output": {
+        "timestamp": "2026-01-01T10:30:00+05:30",
+        "heart_rate": 102,
+        "confidence": 0.65,
+        "ingest_notes": [
+            "Only heart rate extracted from manual input",
+            "Source timestamp used as measurement timestamp."
+        ]
+    }
+}
