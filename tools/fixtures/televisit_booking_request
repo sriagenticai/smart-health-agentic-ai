@@ -1,0 +1,13 @@
+{
+  "event_type": "TELEVISIT_REQUEST",
+  "patient_id": "P12345",
+  "severity_level": "HIGH",
+  "recommended_time": "2026-02-15T10:30:00",
+  "reason": "High blood pressure spike",
+  "vitals_snapshot": {
+    "bp": "180/120",
+    "spo2": 91,
+    "heart_rate": 115
+  },
+  "requires_clinician_approval": true
+}
