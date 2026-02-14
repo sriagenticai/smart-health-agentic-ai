@@ -13,7 +13,8 @@
             "vital_name": "spo2",
             "status": "critical",
             "details": "Blood oxygen saturation below safe threshold.",
-            "severity": "high"
+            "severity": "high",
+            "recommended_action": "TELEVISIT",
         }
     ],
     "confidence": 0.9,
