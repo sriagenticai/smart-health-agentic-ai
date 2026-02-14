@@ -1,0 +1,23 @@
+stateDiagram-v2
+  [*] --> intake
+
+  intake --> context_load
+  context_load --> signal_quality_check
+
+  signal_quality_check --> anomaly_detection: data valid
+  signal_quality_check --> intake: request re-measurement
+
+  anomaly_detection --> risk_assessment
+  risk_assessment --> policy_check
+
+  policy_check --> recommendation
+
+  recommendation --> human_approval: hitl_required == true
+  recommendation --> act: hitl_required == false
+
+  human_approval --> act: approved
+  human_approval --> recommendation: modified / rejected
+
+  act --> finalize
+  finalize --> [*]
+
