@@ -13,7 +13,8 @@
             "vital_name": "heart_rate",
             "status": "alert",
             "details": "Heart rate is elevated above normal threshold.",
-            "severity": "medium"
+            "severity": "medium",
+            "recommended_action": "TELEVISIT",
         }
     ],
     "confidence": 0.85,
