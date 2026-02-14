@@ -1,0 +1,5 @@
+| Condition | Action                                        |
+| --------- | --------------------------------------------- |
+| Moderate  | Auto-schedule Televisit                       |
+| High      | Immediate Televisit + Notify clinician        |
+| Critical  | Call caregiver + Clinician + Ambulance option |
