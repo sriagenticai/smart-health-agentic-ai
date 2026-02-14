@@ -1,0 +1,15 @@
+{
+  "event_type": "CRITICAL_ALERT",
+  "patient_id": "P12345",
+  "severity_level": "CRITICAL",
+  "action_required": [
+    "CALL_CAREGIVER",
+    "CALL_CLINICIAN",
+    "PREPARE_AMBULANCE"
+  ],
+  "location": "GPS Coordinates",
+  "vitals_snapshot": {
+    "bp": "200/130",
+    "spo2": 82
+  }
+}
