@@ -1,2 +1,5 @@
-# smart-health-agentic-ai
-The agent’s goal is to continuously monitor patient health signals and proactively coordinate timely interventions, subject to clinical safety rules, patient consent, and human oversight, while optimizing for early risk detection, patient safety, and care efficiency. 
+Chronic care monitoring is hard: wearable/vital signals arrive continuously, but clinicians cannot manually watch every patient. Patients may ignore early warning signs. Manual triage causes delayed interventions and higher emergency risk. The system should detect anomalies, contextualize with medical history, and recommend safe next steps with clinician oversight. 
+
+One Primary Goal 
+The agent’s goal is to detect health risks from telemetry and trigger appropriate actions, subject to clinical safety thresholds + consent + escalation policies, while optimizing for early intervention and reduced false alarms. 
+
