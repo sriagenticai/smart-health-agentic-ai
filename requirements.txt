@@ -1,0 +1,24 @@
+Tools : scheduling Tool , approval tool (to approve tele visit ) , 
+Care coordinator -Clinician 
+
+Business rules 
+
+Trigger factor will be patient health trends - via telemetry 
+
+States 
+
+ ## ObjectiveDesign
+
+ a single-agent workflow which monitors patient health trends and shoots signals 
+by:
+1) comparing with our threshold rules or patient parameters
+2) basic patient details  (age etc)
+3) medical or health ailments history 
+4) notices a sudden difference in some thresholds and schedules televisit with clinician , clinican approves
+5) Critical issue noticed (emergency cases), call the emergency number of care giver and clinician - Human in loop to take a decision 
+6) Agent booking an ambulance based on request from care giver 
+
+action items :
+Come up with business rules 
+* All basic thresholds 
+* thresholds that determine emergency cases 
